@@ -27,7 +27,7 @@ This is a simple example of using Kafka with Golang and MariaDB.
 
 #### 1. Clean Up Data Directories:
 
-> On the first clone, if there's existing data in the Kafka and ZooKeeper folders, remove it.
+> On the first clone, in the Server folder if there's existing data in the Kafka and ZooKeeper folders, remove it.
 
 ```
 rm -rf ./kafka/*
