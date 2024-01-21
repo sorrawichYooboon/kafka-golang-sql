@@ -58,6 +58,46 @@ go run main.go
 go run main.go
 ```
 
+#### 5. Test the Application:
+
+> Data will be sent to the Kafka server and saved to the MariaDB database.
+
+> POST http://localhost:8000/openAccount
+
+```json
+{
+  "AccountHolder": "kafkaman",
+  "AccountType": 1,
+  "OpeningBalance": 20000
+}
+```
+
+> POST http://localhost:8000/depositFund
+
+```json
+{
+  "ID": "cfbd34d7-fb3e-42db-b66a-ae9e55b16aec",
+  "Amount": 3000
+}
+```
+
+> POST http://localhost:8000/withdrawFund
+
+```json
+{
+  "ID": "cfbd34d7-fb3e-42db-b66a-ae9e55b16aec",
+  "Amount": 3000
+}
+```
+
+> POST http://localhost:8000/closeAccount
+
+```json
+{
+  "ID": "105fc312-af37-4057-bc11-325839c3ccee"
+}
+```
+
 ### Explanation:
 
 > The producer will send a message to the Kafka server. The consumer will receive the message from the Kafka server and save it to the MariaDB database.
